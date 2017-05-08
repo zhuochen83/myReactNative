@@ -1,49 +1,31 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput
-} from 'react-native';
-
+import { Container, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.city}>Auckland</Text>
-          <TextInput style={styles.search}></TextInput>
-        </View>
-        <View style={styles.news}>
-          <Text>Promotion</Text>
-        </View>
-        <View style={styles.listing}>
-          <Text>Current Listing</Text>
-        </View>
-      </View>
-    );
+      render() {
+          return (
+              <Container>
+                  <Content />
+                  <Footer >
+                      <FooterTab>
+                          <Button active vertical>
+                              <Icon name="home" />
+                              <Text>Home</Text>
+                          </Button>
+                          <Button vertical>
+                              <Icon name="camera" />
+                              <Text>Trainer</Text>
+                          </Button>
+                          <Button vertical>
+                              <Icon active name="navigate" />
+                              <Text>Event</Text>
+                          </Button>
+                          <Button vertical>
+                              <Icon name="person" />
+                              <Text>My..</Text>
+                          </Button>
+                      </FooterTab>
+                  </Footer>
+              </Container>
+          );
+      }
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  news: {
-    margin: 10,
-    color: 'red',
-  },
-  listing: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
